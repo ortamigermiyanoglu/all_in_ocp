@@ -5,6 +5,8 @@ public class Beaver extends Rodent{
         super(5);
     }
 
+    public void myCallToFloat(Float f){}
+
     /*
     @Override
     public void parameterCovariant(String s){}
@@ -32,6 +34,10 @@ public class Beaver extends Rodent{
     public static void main(String[] args) {
         Rodent rodent = new Beaver();
         Rodent r = new Rodent(2);
+
+
+        Beaver beaver = new Beaver();
+        beaver.myCallToFloat((float) 0.8); //only 0.8 DNC
 
         System.out.println(rodent.drill());
         System.out.println(r.drill());

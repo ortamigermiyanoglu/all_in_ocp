@@ -1,5 +1,8 @@
 package chapter8;
 
+import java.util.Collections;
+import java.util.Map;
+
 public class MySub extends MySuper{
     private  int sami;
     int rezzak = 33;
@@ -54,4 +57,25 @@ public class MySub extends MySuper{
 
 
     }
+
+
+
+
+
+
+
+
+
+    public void aMethod(Integer n1, String s2, Map<String, String> stringStringMap){
+        if (stringStringMap==null){
+            aMethod(n1, s2);
+        }
+        // continue
+    }
+
+    private void aMethod(Integer n1, String s2){
+
+    }
+
+
 }
