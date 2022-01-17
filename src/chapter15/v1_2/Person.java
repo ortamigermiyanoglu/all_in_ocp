@@ -1,10 +1,12 @@
 package chapter15.v1_2;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.*;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
-public class Person {
+public class Person implements Comparable<Person>{
     Integer age;
     String name;
 
@@ -30,6 +32,11 @@ public class Person {
 
     }
 
+    @Override
+    public int compareTo(@NotNull Person o) {
+        return name.compareTo(o.name);
+    }
+
     class FilterByName implements Predicate<Person> {
 
         Set<String> set = new HashSet<>();
@@ -38,5 +45,17 @@ public class Person {
         public boolean test(Person person) {
             return set.add(person.name);
         }
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "age=" + age +
+                ", name='" + name + '\'' +
+                '}';
     }
 }

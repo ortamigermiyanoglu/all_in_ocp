@@ -1,7 +1,10 @@
 package chapter15.v1_2;
 
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.TreeSet;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -89,6 +92,14 @@ public class IntroductionToTerminalOperations {
         List<String> letters = List.of("w","o","l","f");
 
         letters.stream().reduce("", String::concat, String::concat);
+
+        TreeSet<String> strings = letters.stream().collect(TreeSet::new, TreeSet::add, TreeSet::addAll);
+        System.out.println(strings);
+
+        letters.stream().collect(Collectors.toList());
+
+//        letters.stream().collect(Collectors.toMap(Collections.frequency()));
+
 
     }
 
