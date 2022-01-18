@@ -46,9 +46,13 @@ public class CollectingResults {
     public static void main(String[] args) {
 
         var ohMy = Stream.of("lions", "tigers", "bears");
-
         String result = ohMy.collect(Collectors.joining(", "));
-        //ohMy.collect(Collectors.averagingDouble(String::length));
+
+        var onono = Stream.of(new StringBuilder("lions"), new StringBuilder("tigers"), new StringBuilder("bears"));
+//        StringBuilder sb = onono.collect(Collectors.joining()); DNC
+
+        var ohYour = Stream.of("lions", "tigers", "bears");
+        ohYour.collect(Collectors.averagingDouble(String::length));
 
 
 //        DoubleStream doubleStream = DoubleStream.generate(Math::random).limit(20).map(d->d*10);
@@ -59,22 +63,17 @@ public class CollectingResults {
 
 
         var oLaLa = Stream.of("lions", "tigers", "bears");
-
-
         TreeSet<String> stringTreeSet = oLaLa.filter(s -> s.startsWith("t")).collect(Collectors.toCollection(TreeSet::new));
 
         var ohNo = Stream.of("lions", "tigers", "bears");
-
         Map<String, Integer> stringIntegerMap = ohNo.collect(Collectors.toMap(Function.identity(), String::length));
 
 
         var ohYes = Stream.of("lions", "tigers", "bears");
-
         Map<Integer, String> integerStringMap = ohYes.collect(Collectors.toMap(String::length, Function.identity(), (s1, s2)->s1+", "+s2));
 
         var helloo = Stream.of("lions", "tigers", "bears");
-
-        TreeMap<Integer, String> integerStringTreeMap = ohYes.collect(Collectors.toMap(String::length, Function.identity(), (s1, s2)->s1+", "+s2, TreeMap::new));
+        TreeMap<Integer, String> integerStringTreeMap = helloo.collect(Collectors.toMap(String::length, Function.identity(), (s1, s2)->s1+", "+s2, TreeMap::new));
 
 
 
