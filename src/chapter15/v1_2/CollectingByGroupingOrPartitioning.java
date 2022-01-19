@@ -11,8 +11,9 @@ public class CollectingByGroupingOrPartitioning {
         var ohMy = Stream.of("lions", "tigers", "bears");
         Map<Integer, List<String>> groupBy = ohMy.collect(Collectors.groupingBy(String::length));
 
-        Map<Integer, List<String>> group = ohMy.collect(Collectors.groupingBy(String::length));
+//        Map<Integer, List<String>> group = ohMy.collect(Collectors.groupingBy(String::length));
 
+        System.out.println(groupBy);
 
 
         var ohYour = Stream.of("lions", "tigers", "bears");

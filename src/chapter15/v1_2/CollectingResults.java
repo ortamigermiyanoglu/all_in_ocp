@@ -68,6 +68,9 @@ public class CollectingResults {
         var ohNo = Stream.of("lions", "tigers", "bears");
         Map<String, Integer> stringIntegerMap = ohNo.collect(Collectors.toMap(Function.identity(), String::length));
 
+        var noNoNo = Stream.of("lions", "tigers", "bears");
+//        Map<Integer,String> integerStringMap1 = noNoNo.collect(Collectors.toMap(String::length, Function.identity())); throws RuntimeException
+
 
         var ohYes = Stream.of("lions", "tigers", "bears");
         Map<Integer, String> integerStringMap = ohYes.collect(Collectors.toMap(String::length, Function.identity(), (s1, s2)->s1+", "+s2));
