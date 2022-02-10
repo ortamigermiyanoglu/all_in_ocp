@@ -1,7 +1,5 @@
 package chapter15.functionalprogrammingrevisited;
 
-import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 import java.util.stream.Stream;
 
@@ -35,6 +33,11 @@ public class PuttingTogetherThePipeline {
 
 
 
+        System.out.println("\n----------------------SAMPLE 5----------------------");
+        Stream.iterate(1, x->x+1).peek(System.out::println)
+                .limit(5)
+                .filter(x-> x%2==1)
+                .forEach(System.out::print);
 
 
     }

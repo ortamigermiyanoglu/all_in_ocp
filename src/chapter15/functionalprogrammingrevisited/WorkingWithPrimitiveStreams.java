@@ -1,5 +1,9 @@
 package chapter15.functionalprogrammingrevisited;
 
+import java.util.function.BooleanSupplier;
+import java.util.function.DoubleConsumer;
+import java.util.function.DoublePredicate;
+import java.util.stream.DoubleStream;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
@@ -19,10 +23,22 @@ public class WorkingWithPrimitiveStreams {
         Stream<Integer> s2 = i3.boxed();
 
         System.out.println("\n----------------------SAMPLE 4----------------------");
+        DoubleStream.iterate(.5, d->d/2).limit(3).forEach(System.out::println);
+
+        System.out.println("\n----------------------SAMPLE 5----------------------");
+        BooleanSupplier booleanSupplier = ()->true;
+        System.out.print(booleanSupplier.getAsBoolean());
 
 
+        System.out.println("\n----------------------SAMPLE 6----------------------");
+        DoubleConsumer doubleConsumer = (a) -> {} ;
+        doubleConsumer.accept(5.3);
 
+        System.out.println("\n----------------------SAMPLE 7----------------------");
+        DoublePredicate doublePredicate = (d) -> d<83;
+        doublePredicate.test(14);
 
+        System.out.println("\n----------------------SAMPLE 8----------------------");
 
     }
 
