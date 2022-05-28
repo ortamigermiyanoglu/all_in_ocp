@@ -62,6 +62,8 @@ public class DeclaringAssertions {
         assert 5==6 : new DeclaringAssertions.MusabbekYaniTatli();
 
 
+
+
         System.out.println(null instanceof String);
 
     }
